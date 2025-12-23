@@ -1,0 +1,23 @@
+{
+	"id": 17203674,
+	"name": "[LLM Governance] Critical Health Score",
+	"type": "query alert",
+	"query": "avg(last_5m):avg:llm.health.score{*} < 50",
+	"message": "Health Score is critically low: {{value}}\n   \nSystem health is degraded - check performance, cost, and safety metric\n@incident-llm-safety \n@louizabou@gmail.com",
+	"tags": [
+		"service:llm-governance-monitor"
+	],
+	"options": {
+		"thresholds": {
+			"critical": 50,
+			"warning": 70
+		},
+		"notify_audit": false,
+		"on_missing_data": "default",
+		"include_tags": false,
+		"evaluation_delay": 300,
+		"new_host_delay": 300
+	},
+	"priority": 1,
+	"draft_status": "published"
+}

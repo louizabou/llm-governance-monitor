@@ -1,0 +1,20 @@
+{
+	"id": 17179355,
+	"name": "[LLM Governance] High Latency Alert",
+	"type": "query alert",
+	"query": "avg(last_5m):avg:llm.latency.ms{*} > 5000",
+	"message": "[LLM Governance] High Latency Alert\n\nLLM response time exceeded 5000ms.\nCurrent Value: {{value}} ms\n\n**Runbook**:\n1. Check Cloud Run logs\n2. Verify Vertex AI quota\n\n@louizabou@gmail.com\n@incident-llm-latency",
+	"tags": [],
+	"options": {
+		"thresholds": {
+			"critical": 5000,
+			"warning": 3000
+		},
+		"notify_audit": false,
+		"on_missing_data": "default",
+		"include_tags": false,
+		"new_host_delay": 300
+	},
+	"priority": null,
+	"draft_status": "published"
+}

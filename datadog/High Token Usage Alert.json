@@ -1,0 +1,19 @@
+{
+	"id": 17179420,
+	"name": "[LLM Governance] High Token Usage Alert",
+	"type": "query alert",
+	"query": "sum(last_5m):sum:llm.tokens.total{*}.as_count() > 10000",
+	"message": "High token consumption detected!\n\nTokens used: {{value}}\nThreshold: 10,000 tokens\n\nPotential cost overrun or abuse.\n@louizabou@gmail.com\n@incident-llm-cost",
+	"tags": [],
+	"options": {
+		"thresholds": {
+			"critical": 10000
+		},
+		"notify_audit": false,
+		"on_missing_data": "default",
+		"include_tags": false,
+		"new_host_delay": 300
+	},
+	"priority": null,
+	"draft_status": "published"
+}
