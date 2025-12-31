@@ -14,42 +14,42 @@ Active, self-healing LLM observability solution that monitors performance, detec
 ## System Architecture
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                           USER                                   │
+│                           USER                                  │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    GOOGLE CLOUD RUN                              │
-│                                                                  │
+│                    GOOGLE CLOUD RUN                             │
+│                                                                 │
 │   ┌─────────────────────────────────────────────────────────┐   │
-│   │              GOVERNANCE ENGINE                           │   │
-│   │                                                          │   │
+│   │              GOVERNANCE ENGINE                          │   │
+│   │                                                         │   │
 │   │   STANDARD MODE ──────────── STRICT MODE                │   │
 │   │   (Monitor)                  (Block Threats)            │   │
-│   │                                                          │   │
+│   │                                                         │   │
 │   │   Decision: ALLOW ←─────────→ BLOCK                     │   │
 │   └─────────────────────────────────────────────────────────┘   │
-│                     │                    │                       │
+│                     │                    │                      │
 │              ┌──────┴──────┐      ┌──────┴──────┐               │
 │              │   ALLOW     │      │   BLOCK     │               │
 │              │   ↓         │      │   ↓         │               │
 │              │ Vertex AI   │      │ "Threat     │               │
 │              │ (Gemini)    │      │ Neutralized"│               │
 │              └─────────────┘      └─────────────┘               │
-│                                                                  │
-│   Endpoints:                                                     │
+│                                                                 │
+│   Endpoints:                                                    │
 │   ├── GET  /                    → Chat UI                       │
 │   ├── POST /chat                → Process + Govern              │
-│   ├── POST /governance/simulate-attack → Trigger STRICT        │
-│   ├── POST /governance/reset    → Reset to STANDARD            │
-│   ├── GET  /governance/status   → Current state                │
+│   ├── POST /governance/simulate-attack → Trigger STRICT         │
+│   ├── POST /governance/reset    → Reset to STANDARD             │
+│   ├── GET  /governance/status   → Current state                 │
 │   └── GET  /health              → Health check                  │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                         DATADOG                                  │
-│                                                                  │
+│                         DATADOG                                 │
+│                                                                 │
 │   Custom Metrics:              Event Management:                │
 │   • llm.latency.ms             • STRICT MODE Activated          │
 │   • llm.tokens.total           • Threat Blocked                 │
