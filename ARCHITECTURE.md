@@ -181,4 +181,4 @@ Keywords detected:
 
 ## Author
 
-Louiza Boujida - AI Partner Catalyst Hackathon 2025
+Louiza Boujida 
