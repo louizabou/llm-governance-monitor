@@ -122,9 +122,6 @@ llm-governance-monitor/
 └── README.md
 ```
 
-## Hackathon
-
-Built for the AI Partner Catalyst Hackathon 2025 (Datadog Challenge)
 
 ## License
 
