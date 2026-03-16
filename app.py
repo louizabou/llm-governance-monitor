@@ -10,7 +10,6 @@ Author:         Louiza Boujida
 Created:        December 2025
 License:        MIT
 Repository:     https://github.com/louizabou/llm-governance-monitor
-Competition:    AI Partner Catalyst Hackathon 2025
 
 ================================================================================
 EXECUTIVE SUMMARY
