@@ -6,9 +6,6 @@ Enterprise-grade, self-healing observability solution for LLM applications. It d
 
 LLM Governance Monitor implements a closed-loop governance architecture for Large Language Model deployments. Unlike traditional passive monitoring systems, this solution actively intervenes to protect enterprise AI infrastructure.
 
-**Live Demo**: https://llm-governance-monitor-852577507346.us-central1.run.app
-
-**Video Demo**: https://youtu.be/mDsey7eRPZQ
 
 ## Key Innovation: Active Governance Engine
 
