@@ -173,11 +173,6 @@ Keywords detected:
 | Monitoring | Datadog APM, Metrics API, Events API |
 | Container | Docker + ddtrace |
 
-## URLs
-
-- **Application**: https://llm-governance-monitor-852577507346.us-central1.run.app
-- **GitHub**: https://github.com/louizabou/llm-governance-monitor
-- **Datadog**: https://us5.datadoghq.com
 
 ## Author
 
